@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Táblázat készítése</title>
+</head>
+<body>
+    
+<h1>Táblázat készítése, formázása</h1>
+
+<table border="3" class="table">
+    <caption><h3>Táblázat elemei</h3></caption>
+    <thead style="font-size: 12pt; background: #c0c0c0;">
+        <tr class="gray">
+            <th> <em>1. oszlop fejléc</em></th>
+            <th> <em>2. oszlop fejléc</em></th>
+            <th> <em>3. oszlop fejléc</em></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="red">
+            <td>1. sor. 1. elem</td>
+            <td style="text-align: right; vertical-align: top;">1. sor. 2. elem</td>
+            <td style="vertical-align: bottom; text-align: center;">1. sor. 3. elem</td>
+        </tr>
+        <tr  class="baige">
+            <td>2. sor. 1. elem</td>
+            <td class="scroll">
+                <div class="scroll">
+                    2. sor. 2. elem  Az ember ősidők óta használ eszközöket, ha úgy tetszik, számológépeket a földi javai számbavételéhez, a menyiségekkel végzett kalkulusok gyorsabb, pontosabb, kevesebbemberi munkát igénylő végrehajtásához.
+                </div>
+            </td>
+            <td class="center">2. sor. 3. elem</td>
+        </tr>
+        <tr class="baige">
+            <td>3. sor. 1. elem</td>
+            <td class="magenta">3. sor. 2. elem</td>
+            <td>3. sor. 3. elem</td>
+        </tr>
+    </tbody>
+</table>
+
+<link rel="stylesheet" href="styles1d.css">
+
+</body>
+</html>
