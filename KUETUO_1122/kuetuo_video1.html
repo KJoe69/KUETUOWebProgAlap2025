@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video fájl beillesztése</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<style>
+    footer {
+        width: 500px;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+    button {
+        font-size: 34px;
+        width: 42px;
+        background-color: lightblue;
+        border: 1px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .frame {
+        background-color: transparent;
+        width: 500px;
+        height: 50px;
+        padding: 5px;
+        grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 100px;
+        display: grid;
+    }
+    .cell {
+        margin: 5px;
+     }
+</style>
+<body>
+<header>
+    <h3>Videó lejátszása_KUETUO</h3>
+</header>
+<video id="videoPlayer" width="640" height="480" controls>
+    <source src="kuetuo_video1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<div class="frame" style="margin-top: 20px;">
+    <div class="cell"><button  onclick="playVideo()"><span class="material-symbols-outlined">play_arrow</span></button></div>
+    <div class="cell"><button onclick="pauseVideo()"><span class="material-symbols-outlined">pause</span></button></div>
+    <div class="cell">&nbsp;</div>
+    <div class="cell"><button onclick="togglePlayPause()"><span class="material-symbols-outlined">play_pause</span></button></div>
+</div>
+
+<div class="frame">
+    <div class="cell"><button onclick="muteVideo()"><span class="material-symbols-outlined">volume_off</span></button></div>
+    <div class="cell"><button onclick="setVolume(0.5)"><span class="material-symbols-outlined">volume_down</span></button></div>
+    <div class="cell"><button onclick="setVolume(1)"><span class="material-symbols-outlined">volume_up</span></button></div>
+    <div class="cell"><button onclick="setPlaybackRate(0.5)"><span class="material-symbols-outlined">slow_motion_video</span></button></div>
+    <div class="cell"><button onclick="setPlaybackRate(0.75)"><span class="material-symbols-outlined">fast_rewind</span></button></div>
+    <div class="cell"><button onclick="setPlaybackRate(1)"><span class="material-symbols-outlined">play_arrow</span></button></div>
+    <div class="cell"><button onclick="setPlaybackRate(1.5)"><span class="material-symbols-outlined">fast_forward</span></button></div>
+    <div class="cell"><button onclick="setPlaybackRate(2)"><span class="material-symbols-outlined">keyboard_double_arrow_right</span></button></div>
+</div>
+
+<div class="frame">
+    <div class="cell"><button onclick="smallSize()"><span class="material-symbols-outlined">photo_size_select_small</span></button></div>
+    <div class="cell"><button onclick="normalSize()"><span class="material-symbols-outlined">photo_size_select_large</span></button></div>
+    <div class="cell"><button onclick="largeSize()"><span class="material-symbols-outlined">photo_size_select_large</span></button></div>
+    <div class="cell"><button onclick="checkIfEnded()"><span class="material-symbols-outlined">check</span></button></div>
+    <div class="cell"><button onclick="videoSize()"><span class="material-symbols-outlined">timer</span></button></div>
+    <div class="cell"><button onclick="currentPosition()"><span class="material-symbols-outlined">access_time</span></button></div>
+</div>
+
+<footer>
+    <hr>
+    <p>Forrás: <a href="https://examplefiles.org/example-video-files/sample-mp4-files">https://examplefiles.org/example-video-files/sample-mp4-files</a></p>
+</footer>
+
+<script>
+    const video = document.getElementById('videoPlayer');
+
+    function playVideo() {
+        video.play();
+    }
+
+    function pauseVideo() {
+        video.pause();
+    }
+
+    function togglePlayPause() {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+    function muteVideo() {
+        video.muted = !video.muted;
+    }
+
+    function setVolume(level) {
+        video.volume = level; 
+    }
+
+    function setPlaybackRate(rate) {
+        video.playbackRate = rate; 
+    }
+
+    function smallSize() {
+        video.width = 320;
+        video.height = 240;
+    }
+
+    function normalSize() {
+        video.width = 640;
+        video.height = 480;
+    }
+
+    function largeSize() {
+        video.width = 1280;
+        video.height = 720;
+    }
+
+    function checkIfEnded() {
+        if (video.ended) {
+            alert("A videó lejátszása befejeződött.");
+        } else {
+            alert("A videó még nem ért véget.");
+        }
+    }
+
+    function videoSize() {
+        alert("A videó hossza: " + video.duration + " másodperc.");
+    }
+
+    function currentPosition() {
+        alert("A videó jelenlegi pozíciója: " + video.currentTime + " másodperc.");
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video fájl beillesztése</title>
+</head>
+<style>
+    footer {
+        width: 500px;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+</style>
+<body>
+<header>
+    <h3>Videó lejátszása_KUETUO</h3>
+</header>
+<video id="videoPlayer" width="640" height="480" controls>
+    <source src="kuetuo_video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<div style="margin-top: 20px;">
+    <button onclick="playVideo()">Indítás</button>
+    <button onclick="pauseVideo()">Leállítás</button>
+    <button onclick="togglePlayPause()">Indítás / Leállítás</button>
+</div>
+
+<div style="margin-top: 20px;">
+    <button onclick="muteVideo()">Néma</button>
+    <button onclick="setVolume(0.5)">Halk</button>
+    <button onclick="setVolume(1)">Hangos</button>
+    <button style="margin-left: 10px;" onclick="setPlaybackRate(0.5)">Nagyon lassú</button>
+    <button onclick="setPlaybackRate(0.75)">Lassú</button>
+    <button onclick="setPlaybackRate(1)">Normál</button>
+    <button onclick="setPlaybackRate(1.5)">Gyorsabb</button>
+    <button onclick="setPlaybackRate(2)">Nagyon gyors</button>
+</div>
+
+<div style="margin-top: 20px;">
+    <button onclick="smallSize()">Kicsi</button>
+    <button onclick="normalSize()">Normál</button>
+    <button onclick="largeSize()">Nagy</button>
+    <button style="margin-left: 10px;" onclick="checkIfEnded()">Befejeződött-e</button>
+    <button onclick="videoSize()">Videó hossza (mp)</button>
+    <button onclick="currentPosition()">Jelenlegi pozíció</button>
+</div>
+<footer>
+    <hr>
+    <p>Forrás: <a href="https://www.w3schools.com/html/html5_video.asp">https://www.w3schools.com/html/html5_video.asp</a></p>
+</footer>
+
+<script>
+    const video = document.getElementById('videoPlayer');
+
+    function playVideo() {
+        video.play();
+    }
+
+    function pauseVideo() {
+        video.pause();
+    }
+
+    function togglePlayPause() {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+    function muteVideo() {
+        video.muted = !video.muted;
+    }
+
+    function setVolume(level) {
+        video.volume = level; 
+    }
+
+    function setPlaybackRate(rate) {
+        video.playbackRate = rate; 
+    }
+
+    function smallSize() {
+        video.width = 160;
+        video.height = 120;
+    }
+
+    function normalSize() {
+        video.width = 320;
+        video.height = 240;
+    }
+
+    function largeSize() {
+        video.width = 640;
+        video.height = 480;
+    }
+
+    function checkIfEnded() {
+        if (video.ended) {
+            alert("A videó lejátszása befejeződött.");
+        } else {
+            alert("A videó még nem ért véget.");
+        }
+    }
+
+    function videoSize() {
+        alert("A videó hossza: " + video.duration + " másodperc.");
+    }
+
+    function currentPosition() {
+        alert("A videó jelenlegi pozíciója: " + video.currentTime + " másodperc.");
+    }
+    
+</script>
+</body>
+</html>
