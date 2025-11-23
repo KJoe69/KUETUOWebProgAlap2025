@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: url("img/hatter.jpg");
+        padding-bottom: 50px;
+    }
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        color: white;
+    }
+    #the_image {
+        width: 94%;
+        height: auto;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-auto-rows: 100px; 
+        text-align: center;
+        margin-top: 10px;
+    }
+    .mnu {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin: 0 15px;
+    }
+</style>
+<body>
+    <header>
+        <a href="kuetuo_kezdolap.html">
+            <img id="the_image" src="img/the.png" alt="">
+        </a>
+        <nav>
+            <a class="mnu" href="kuetuo_db1.html">Adatbázis rendszerek</a>
+            <a class="mnu" href="kuetuo_webprog.html">Webprogramozás & design</a>
+            <a class="mnu" href="kuetuo_webad.html">Webes adatkezelő környezetek</a>
+        </nav>
+    </header>
+    
+    <article style="display: flex">
+        <div style="justify-content: start; color: white;">
+            <h2>Adatbázis rendszerek</h2>
+            <p>Az adatbázis egy strukturált adatgyűjtemény, amely lehetővé teszi az adatok hatékony tárolását, kezelését és lekérdezését. Az adatbázisok különböző típusai léteznek, például relációs adatbázisok, NoSQL adatbázisok és objektumorientált adatbázisok. Az adatbázis-kezelő rendszerek (DBMS) olyan szoftverek, amelyek lehetővé teszik az adatbázisok létrehozását, karbantartását és használatát.</p>
+
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+
+        </div>
+        <div style="width: auto; justify-content: end;margin-right: 3%;">
+            <img width="500px" src="img/db.jpg" alt="">
+        </div>
+    </article>
+
+    <footer>
+        <p>Koncz József, KUETUO, 2025</p>
+    </footer>
+</body>
+</html>

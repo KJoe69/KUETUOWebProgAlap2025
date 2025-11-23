@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages</title>
+</head>
+<body>
+    <h2>Programozási nyelvek</h2>
+
+    <div>
+        <button id="nextBtn">Következő nyelv</button>
+        <button id="resetBtn">Újra kezdés</button>
+        <button id="addBtn">Aktuális idő hozzáadása a tömbhöz</button>
+    </div>
+
+    <div id="output" style="margin-top:16px; font-weight:500;"></div>
+
+<script>
+    const languages = ['JavaScript', 'Python', 'C++'];
+    let index = 0;
+    const out = document.getElementById('output');
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (index < languages.length) {
+            out.textContent = languages[index];
+            index++;
+        } else {
+            index=0;
+            out.textContent = languages[index];
+            index++;
+        }
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+        index = 0;
+        out.textContent = '';
+    });
+
+    document.getElementById('addBtn').addEventListener('click', () => {
+        const currentTime = new Date().toLocaleTimeString();
+        languages.push(currentTime);
+        out.textContent = 'Hozzáadva: ' + currentTime;
+    });
+</script>
+    
+</body>
+</html>
