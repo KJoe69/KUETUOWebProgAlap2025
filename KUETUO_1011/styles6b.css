@@ -1,0 +1,56 @@
+.table {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+.gray {
+    background-color: #cccccc;
+    text-align: center;
+    height: 50px;
+    font-weight: bold;
+}
+.center {
+    text-align: center;
+}
+
+.programozas {
+    background-color: #ffeb3b;
+}
+
+.informatika-logikai {
+    background-color: #2196f3;
+    color: white;
+}
+
+.matematika {
+    background-color: #4caf50;
+    color: white;
+}
+
+.webprogramozas {
+    background-color: #ff9800;
+}
+
+.kommunikacio {
+    background-color: #9c27b0;
+    color: white;
+}
+
+.informatika-bevezetes {
+    background-color: #f44336;
+    color: white;
+}
+
+.szamitogep-architekturak {
+    background-color: #795548;
+    color: white;
+}
+
+.kutatas-tanulas {
+    background-color: #607d8b;
+    color: white;
+}
+
+.tex {
+    background-color: #e91e63;
+    color: white;
+}
